@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+.add-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(26, 197, 197);
+}

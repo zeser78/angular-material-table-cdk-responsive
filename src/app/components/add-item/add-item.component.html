@@ -1,0 +1,24 @@
+<div class="grid-container">
+  <h3>Add Item</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <input
+        type="text"
+        placeholder="Add Title"
+        [(ngModel)]="item.title"
+        name="title"
+      />
+      <label>Title</label>
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="Add Description"
+        [(ngModel)]="item.description"
+        name="description"
+      />
+      <label>Description</label>
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+</div>

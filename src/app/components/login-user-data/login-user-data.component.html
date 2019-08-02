@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Base</h1>
+
+  <div *ngIf="auth.user$ | async as user; else login">
+    <pre> {{ user | json }}</pre>
+    <hr />
+    <button class="button" (click)="auth.signOut()">Sign Out</button>
+  </div>
+
+  <ng-template #login>
+    <button class="button" (click)="auth.googleSignin()">
+      Login with Google
+    </button>
+  </ng-template>
+</div>
+<app-login-items></app-login-items>
+
+<div *ngIf="auth.user$ | async; then authenticated; else guest"></div>
+
+<!-- User NOT logged in -->
+
+<ng-template #guest>
+  <h3>Howdy, GUEST</h3>
+  <p>Login to get started</p>
+  <button class="button" (click)="googleSignin()">
+    Login with Google
+  </button>
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="user$ | async as user">
+    <h3>Howdy, {{ user.displayName }}</h3>
+    <p>UID: {{ user.uid }}</p>
+  </div>
+  <button class="button" (click)="signOut()">Sign Out</button>
+</ng-template>
+<app-login-items></app-login-items>
