@@ -9,23 +9,25 @@
 <h1>CDK Table</h1>
 
 <table cdk-table [dataSource]="dataSource">
-  <!-- Position Column -->
-  <ng-container cdkColumnDef="position">
-    <th cdk-header-cell *cdkHeaderCellDef>
-      No.
-    </th>
-    <td cdk-cell *cdkCellDef="let element" data-label="No.">
-      {{ element.position }}
-    </td>
-  </ng-container>
+  <div class="inside">
+    <!-- Position Column -->
+    <ng-container cdkColumnDef="position">
+      <th cdk-header-cell *cdkHeaderCellDef>
+        No.
+      </th>
+      <td cdk-cell *cdkCellDef="let element" data-label="No.">
+        {{ element.position }}
+      </td>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container cdkColumnDef="name">
-    <th cdk-header-cell *cdkHeaderCellDef>Name</th>
-    <td cdk-cell *cdkCellDef="let element" data-label="Name">
-      {{ element.name }}
-    </td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef>Name</th>
+      <td cdk-cell *cdkCellDef="let element" data-label="Name">
+        {{ element.name }}
+      </td>
+    </ng-container>
+  </div>
 
   <!-- Weight Column -->
   <ng-container cdkColumnDef="weight">
@@ -46,3 +48,8 @@
   <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
   <tr cdk-row *cdkRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<div class="inside">
+  <h1>Hello</h1>
+  <h1>Again</h1>
+</div>
